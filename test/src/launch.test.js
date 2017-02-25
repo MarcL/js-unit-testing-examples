@@ -69,12 +69,12 @@ describe('Express server', () => {
 
     it('should listen on default port 7080', () => {
         server.start();
-        stubExpressListen.should.have.been.calledWithExactly(7080, sinon.match.func)
+        stubExpressListen.should.have.been.calledWithExactly(7080, sinon.match.func);
     });
 
     it('should listen on expected port if passed', () => {
         const expectedPort = 8888;
         server.start(expectedPort);
-        stubExpressListen.should.have.been.calledWithExactly(expectedPort, sinon.match.func)
+        stubExpressListen.should.have.been.calledWithExactly(expectedPort, sinon.match.func);
     });
 });

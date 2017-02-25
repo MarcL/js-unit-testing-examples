@@ -4,6 +4,7 @@
   "description": "Unit testing Express routes using Mocha",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/ test/",
     "test": "mocha",
     "test:watch": "mocha --watch"
   },
@@ -30,6 +31,10 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "~6.0.0",
+    "eslint": "~3.16.1",
+    "eslint-config-airbnb-base": "~11.1.0",
+    "eslint-plugin-import": "~2.2.0",
+    "node-mocks-http": "~1.6.1",
     "proxyquire": "^1.7.10",
     "sinon": "^1.17.6",
     "sinon-as-promised": "~4.0.2",
