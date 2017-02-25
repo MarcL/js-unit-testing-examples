@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/ test/",
+    "precommit": "npm run lint",
+    "prepush": "npm run test",
     "test": "mocha",
     "test:watch": "mocha --watch"
   },
@@ -34,6 +36,7 @@
     "eslint": "~3.16.1",
     "eslint-config-airbnb-base": "~11.1.0",
     "eslint-plugin-import": "~2.2.0",
+    "husky": "~0.13.1",
     "node-mocks-http": "~1.6.1",
     "proxyquire": "^1.7.10",
     "sinon": "^1.17.6",
