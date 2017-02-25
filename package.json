@@ -7,6 +7,7 @@
     "lint": "eslint src/ test/",
     "precommit": "npm run lint",
     "prepush": "npm run test",
+    "start": "node .",
     "test": "mocha",
     "test:watch": "mocha --watch"
   },

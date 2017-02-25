@@ -1,9 +1,23 @@
+function promiseWrapper(shouldFail) {
+    return shouldFail ?
+        Promise.reject() :
+        Promise.resolve();
+}
+
 function promiseTest(request, response) {
-    return Promise.resolve()
+    const {fail: shouldFail = false} = request.query;
+
+    return promiseWrapper(shouldFail)
         .then(() => {
             response.json({
-                message: 'response inside Promise',
+                message: 'resolved Promise',
                 error: false
+            });
+        })
+        .catch(() => {
+            response.json({
+                message: 'rejected Promise',
+                error: true
             });
         });
 }

@@ -19,8 +19,22 @@ describe('promiseTest middleware', () => {
 
     it('should render expected json when Promise resolves', () => {
         const expectedJson = {
-            message: 'response inside Promise',
+            message: 'resolved Promise',
             error: false
+        };
+
+        return promiseTest(fakeRequest, fakeResponse)
+            .then(() => {
+                expect(stubResponseJson)
+                    .to.have.been.calledWithExactly(expectedJson);
+            });
+    });
+
+    it('should render expected json when Promise rejects', () => {
+        fakeRequest.query.fail = true;
+        const expectedJson = {
+            message: 'rejected Promise',
+            error: true
         };
 
         return promiseTest(fakeRequest, fakeResponse)
