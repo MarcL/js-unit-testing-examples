@@ -1,10 +1,4 @@
-import sinon from 'sinon';
-import chai, {expect} from 'chai';
-import sinonChai from 'sinon-chai';
 import proxyquire from 'proxyquire';
-
-chai.should();
-chai.use(sinonChai);
 
 describe('Express server', () => {
     let stubExpress;

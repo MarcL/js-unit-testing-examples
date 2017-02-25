@@ -1,6 +1,6 @@
 {
-  "name": "unit-test-express-routes",
-  "version": "1.0.0",
+  "name": "js-unit-testing-framework",
+  "version": "0.0.1",
   "description": "Unit testing Express routes using Mocha",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/MarcL/unit-test-express-routes.git"
+    "url": "git+ssh://git@github.com/MarcL/js-unit-testing-framework.git"
   },
   "keywords": [
     "unit",
@@ -23,12 +23,15 @@
   "dependencies": {
     "babel-preset-es2015": "^6.18.0",
     "babel-register": "^6.18.0",
+    "bluebird": "~3.4.7",
     "express": "^4.14.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-as-promised": "~6.0.0",
     "proxyquire": "^1.7.10",
     "sinon": "^1.17.6",
+    "sinon-as-promised": "~4.0.2",
     "sinon-chai": "^2.8.0"
   }
 }
