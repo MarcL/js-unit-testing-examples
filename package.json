@@ -4,7 +4,8 @@
   "description": "Unit testing Express routes using Mocha",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:watch": "mocha --watch"
   },
   "repository": {
     "type": "git",
