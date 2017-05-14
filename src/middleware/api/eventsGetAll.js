@@ -1,7 +1,6 @@
-import * as dataService from '../../services/data';
+import * as events from '../../services/events';
 
-
-const dataGetAll = (request, response) => {
+const eventsGetAll = (request, response) => {
     const renderJsonResponse = (dataObject, success = true) => {
         const jsonResponse = Object.assign(
             dataObject,
@@ -10,7 +9,7 @@ const dataGetAll = (request, response) => {
         response.json(jsonResponse);
     };
 
-    return dataService.getAll()
+    return events.getAll()
         .then((data) => {
             renderJsonResponse({
                 data
@@ -23,4 +22,4 @@ const dataGetAll = (request, response) => {
         });
 };
 
-export default dataGetAll;
+export default eventsGetAll;

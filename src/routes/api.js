@@ -1,5 +1,5 @@
 import express from 'express';
-import dataGetAll from '../middleware/api/dataGetAll';
+import eventsGetAll from '../middleware/api/eventsGetAll';
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ router.get('/', (request, response) => {
 
 // TODO
 // - Add GET for all data /data - return data + 200
-router.get('/data', dataGetAll);
+router.get('/events', eventsGetAll);
 //router.get('/data/:id', dataGetById);
 
 // - Add POST to add new data /data - return 201

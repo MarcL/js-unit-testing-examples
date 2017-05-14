@@ -1,11 +1,11 @@
 import {createRequest, createResponse} from 'node-mocks-http';
-import dataGetAll from '../../../../src/middleware/api/dataGetAll';
-import * as dataService from '../../../../src/services/data';
+import eventsGetAll from '../../../../src/middleware/api/eventsGetAll';
+import * as eventsService from '../../../../src/services/events';
 
-describe('dataGetAll()', () => {
+describe('eventsGetAll()', () => {
     let fakeRequest;
     let fakeResponse;
-    let stubDataServiceGetAll;
+    let stubEventServiceGetAll;
     let spyResponseJson;
 
     const fakeData = [];
@@ -14,20 +14,20 @@ describe('dataGetAll()', () => {
         fakeRequest = createRequest();
         fakeResponse = createResponse();
 
-        stubDataServiceGetAll = sinon.stub(dataService, 'getAll');
-        stubDataServiceGetAll.resolves(fakeData);
+        stubEventServiceGetAll = sinon.stub(eventsService, 'getAll');
+        stubEventServiceGetAll.resolves(fakeData);
         spyResponseJson = sinon.spy(fakeResponse, 'json');
     });
 
     afterEach(() => {
-        stubDataServiceGetAll.restore();
+        stubEventServiceGetAll.restore();
     });
 
     it('should call data service getAll()', (done) => {
-        dataGetAll(fakeRequest, fakeResponse)
+        eventsGetAll(fakeRequest, fakeResponse)
             .should.be.fulfilled
             .then(() => {
-                expect(stubDataServiceGetAll.callCount).to.equal(1);
+                expect(stubEventServiceGetAll.callCount).to.equal(1);
             })
             .should.notify(done);
     });
@@ -38,7 +38,7 @@ describe('dataGetAll()', () => {
             success: true
         };
 
-        dataGetAll(fakeRequest, fakeResponse)
+        eventsGetAll(fakeRequest, fakeResponse)
             .should.be.fulfilled
             .then(() => {
                 expect(spyResponseJson)
@@ -49,14 +49,14 @@ describe('dataGetAll()', () => {
 
     it('should render expected failure json when data request fails', (done) => {
         const givenFailureData = 'error connecting to database';
-        stubDataServiceGetAll.rejects(givenFailureData);
+        stubEventServiceGetAll.rejects(givenFailureData);
 
         const expectedData = {
             success: false,
             message: givenFailureData
         };
 
-        dataGetAll(fakeRequest, fakeResponse)
+        eventsGetAll(fakeRequest, fakeResponse)
             .should.be.fulfilled
             .then(() => {
                 expect(spyResponseJson)
