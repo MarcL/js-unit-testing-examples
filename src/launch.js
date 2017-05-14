@@ -5,6 +5,7 @@ import login from './middleware/login';
 import authenticate from './middleware/authenticate';
 import dashboard from './middleware/dashboard';
 import promiseTest from './middleware/promiseTest';
+import apiRoutes from './routes/api';
 
 function setupRoutes(app) {
     app.get('/', homepage);
@@ -14,6 +15,8 @@ function setupRoutes(app) {
         dashboard
     );
     app.get('/promises', promiseTest);
+
+    app.use('/api', apiRoutes);
 }
 
 function start(port = 7080) {

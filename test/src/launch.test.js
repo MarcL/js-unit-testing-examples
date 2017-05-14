@@ -23,7 +23,8 @@ describe('Express server', () => {
         // Create fake express application with spy methods
         fakeExpress = {
             get: spyExpressGet,
-            listen: stubExpressListen
+            listen: stubExpressListen,
+            use: () => {}
         };
 
         // Return fake express application when express() is called
