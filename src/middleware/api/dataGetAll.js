@@ -1,18 +1,25 @@
 import * as dataService from '../../services/data';
 
+
 const dataGetAll = (request, response) => {
+    const renderJsonResponse = (dataObject, success = true) => {
+        const jsonResponse = Object.assign(
+            dataObject,
+            {success}
+        );
+        response.json(jsonResponse);
+    };
+
     return dataService.getAll()
         .then((data) => {
-            response.json({
-                data,
-                success: true
+            renderJsonResponse({
+                data
             });
         })
         .catch((error) => {
-            response.json({
-                message: error.name,
-                success: false
-            });
+            renderJsonResponse({
+                message: error.name
+            }, false);
         });
 };
 
