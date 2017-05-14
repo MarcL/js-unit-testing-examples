@@ -1,7 +1,7 @@
-const eventsDatabase = [];
+import fakeData from '../data/fakeData';
 
 const getAll = () => {
-    return Promise.resolve(eventsDatabase);
+    return Promise.resolve(fakeData.events);
 };
 
 export {
