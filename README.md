@@ -23,7 +23,7 @@ npm test
 
 ### Asynchronous functions and promises
 
-Some examples of how to test asynchronous functions and promises, including some tips and tricks and gotchas. See code examples [here](https://github.com/MarcL/js-unit-testing-examples/test/examples/asychronous.test.js).
+Some examples of how to test asynchronous functions and promises, including some tips and tricks and gotchas. See code examples [here](test/examples/asychronous.test.js).
 
 #### Asynchronous function
 - Timeout because `done` callback isn't called when function succeeds
