@@ -19,11 +19,13 @@ The code sets up a basic Express server with a few routes and some tests which c
 npm test
 ```
 
-## Test Examples
+## JavaScript Tests
+
+Take a look in the `test` directory to see all of the test code. There are lots of examples of different types of tests and how to create them.
 
 ### Asynchronous functions and promises
 
-Some examples of how to test asynchronous functions and promises, including some tips and tricks and gotchas. See code examples [here](test/examples/asychronous.test.js).
+Some examples of how to test asynchronous functions and promises, including some tips and tricks and gotchas.
 
 #### Asynchronous function
 - Timeout because `done` callback isn't called when function succeeds
