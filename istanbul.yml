@@ -1,0 +1,7 @@
+# istanbul.yml
+check-coverage: true
+instrumentation:
+  root: ./src
+  extensions: ['.js']
+  default-excludes: true
+  excludes: ['**/node_modules/**', '**/test/**']

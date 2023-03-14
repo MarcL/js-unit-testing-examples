@@ -9,7 +9,10 @@
     "prepush": "npm run test",
     "start": "node .",
     "test": "mocha",
-    "test:watch": "mocha --watch"
+    "test:watch": "mocha --watch",
+    "test": "mocha",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- ./test/*.js",
+    "report": "istanbul report"
   },
   "repository": {
     "type": "git",
